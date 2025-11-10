@@ -1,30 +1,3 @@
-int conductivity;   //A0 will be used to invalidate all other voltage values, and will use the full capacity of the arduino and distribute throughout
-                    //the ciruit of 0-1023
-int threshold = 1000; //threshold to which the sensor will display units, and notify proctor that the procedure has been carried out properly
-                    // and that there is no more matter detected above 1000.
-                    //keep in mind that the monitor tends to fluctuate values here and there
-int LEDPin = 9; //the LED does not need as much power as the pump, so it will be connected to pin 9
-int LEDSpeed = 255; //LED brightness level, 0-255
-int suctionPin = 11; //the pump will be connected to pin 11, as it requires more power than the LED
-int sunctionSpeed = 255; //pump speed level, 0-255
-                        // the speed of the pump can and will be adjusted to fit the needs of the user
-
-void setup() {
-
-    //Initializes serial communication @9600 baud
-    //baud rate can be adjusted either for fun or for best fit
-    Serial.begin(9600);
-
-    //Initializes pump function
-    pinMode(suctionPin, OUTPUT);
-
-    //Initializes LED function
-    //The LED will now know when to turn on and off when called during loop
-    //when the threshold has been met, or conductivity is lower than the threshold = on
-    //when threshold has been exceeded, or conductivity is at its peak = off
-    pinMode(LEDPin, OUTPUT);
-}
-
 void loop() {
 
     //Conductivity's central read
