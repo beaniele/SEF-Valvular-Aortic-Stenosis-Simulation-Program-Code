@@ -1,9 +1,5 @@
-/*
-It should be noted that this program is intended to run on the Arduino Uno R4 Minima, not the Wi-Fi
-a typical input/output response system will be achieved through this program. the prototype,
-with the use of a pump, sensor, and LED, will begin function when analog values exceed the
-stated threshold through the sensor displaying conductivity units onto the serial monitor.
-once conductivity has been recorded to be less than or quivalate to that of the given threshold,
-the pump will stop its fucntion, and the LED will turn on, indicating that the system has stopped.
-this indicates that the procedure being simulated has been completed successfully.
-*/
+This is a response based prototype system that relies solely on conductivity values picked up by a simple sensor made by pure aluminum foil. Inspired by the rising problem and concern regarding calcification that occurs in aortic stenosis (valvular diseases, refer to the US Medical Library), this model acts as a blood incision based transfusion system, where a calcium mock (distilled water) will be sucked and exported out from the aortic valve (pump on ~11), and deposited into a separate compartment. After, blood mock (tap water) will be pumped back into the valve (pump on ~10) in order to stimulate the tissue within the valve once more i.e. stiff tissue prior to the procedure. This is purely a simulation as to what could be considered a self-proclaimed medical procedure that can be considered in the future if the success of the project is deemed as triumphant.
+
+Note: Distilled water has conductivity greater than 0, but less than 1023
+Note: Tap water has exactly 1023 conductivity, or fluctuates 2-3 units below the standard
+Note: Serial monitor to be used for monitoring conductivity flow and accuracy.
