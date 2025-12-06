@@ -1,37 +1,16 @@
+//prototype will respond to this loop based system and base each variable function to each condition.
 void loop() {
 
-    //Conductivity's central read
-    //The voltage used will be the defalt that the R4 allows for
-    conductivity = analogRead(A0);
+    conductivity = analogRead(A0); //values from ~A0
+    SerialUSB.println(conductivity); //the UNO R4 only understands and connects to SerialUSB, not Serial
+                                     //serial monitor will print out conductivity units as a response to the sensor
+    delay(200); //serial monitor will delay considering that it prints @ 9600 baud
 
-    //When the serial monitor knows when to start displaying data of 1023 analog units
-    //Initiates the serial monitor to display conductivity units
-    Serial.println(conductivity);
-
-    //conditional statement to determine whether the pump or LED will be activated
-    //if the conductivity read is greater than 1000C units, pump start
-    if (conductivity > threshold) {
-
-        //suction, or pump fucntion, will begin
-        //is only active when conductivity units exceed the stated threshold
-        analogWrite(suctionPin, sunctionSpeed); //activates pump
-        
-        //no power should be going to the LED
-        //should be turned off while the pump is active
-        analogWrite(LEDPin, 0); //turns off LED
+    if (conductivity < threshold && conductivity > 200) {
+        analogWrite(pumpPin, pumpSpeed); //first pump performs its function
+        analogWrite(pump2Pin, 0); //second pump speed set to 0 to prevent it from running
     }
-    //else, when the conductivity read is less than or equal to the stated threshold
-    //pump off, LED on
-    else {
-
-        //suction function will stop when the threshold is met
-        //honestly, it's either 0 is stated to say that no power to the pump
-        //or LOW could also be stated as well
-        //0 is used here for clarity and mere preference
-        analogWrite(suctionPin, 0); //deactivates pump
-        
-        //The LED should turn on and flash
-        //procedure has been completed successfully
-        analogWrite(LEDPin, LEDSpeed); //turns on LED
+    else{                         //if conductivity exceeds the value of 200, but is less than the threshold
+        analogWrite(pumpPin, 0);  // first pump speed set to 0
+        analogWrite(pump2Pin, pump2Speed); //second pump performs its function
     }
-}
