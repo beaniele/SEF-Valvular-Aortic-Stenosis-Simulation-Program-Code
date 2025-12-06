@@ -1,14 +1,13 @@
-/*
-basically the call out of all of the variables that will be used with the code
-*/
+//just calling all the variables so that the system understands them when they're stated later in the code
 
-int conductivity;   //A0 will be used to invalidate all other voltage values, and will use the full capacity of the arduino and distribute throughout
-                    //the ciruit of 0-1023
-int threshold = 1000; //threshold to which the sensor will display units, and notify proctor that the procedure has been carried out properly
-                    // and that there is no more matter detected above 1000.
-                    //keep in mind that the monitor tends to fluctuate values here and there
-int LEDPin = 9; //the LED does not need as much power as the pump, so it will be connected to pin 9
-int LEDSpeed = 255; //LED brightness level, 0-255
-int suctionPin = 11; //the pump will be connected to pin 11, as it requires more power than the LED
-int sunctionSpeed = 255; //pump speed level, 0-255
-                        // the speed of the pump can and will be adjusted to fit the needs of the user
+int pumpPin = 11; //first pump connects to ~11 for power
+
+int pumpSpeed = 80; //first pump speed set @80 because suction requires min volt to perform
+
+int conductivity;
+
+int threshold = 1023; //threshold to be met by prototype
+
+int pump2Pin = 10; //second pump connects to ~10 for power
+
+int pump2Speed = 225; //second pump speed set at max b/c peristaltic requires more volt/+speed to perform
