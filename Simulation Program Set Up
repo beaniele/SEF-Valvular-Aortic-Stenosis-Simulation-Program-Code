@@ -1,19 +1,12 @@
-/*
-General set up of the main program, which will allow for the simulation to run when called
-*/
+//setting up the loop so that the system understands what the prototype needs to do when it meets a specific condition
 
 void setup() {
 
-    //Initializes serial communication @9600 baud
-    //baud rate can be adjusted either for fun or for best fit
-    Serial.begin(9600);
+pinMode(pumpPin, OUTPUT); //first pump set as output for specific condition
 
-    //Initializes pump function
-    pinMode(suctionPin, OUTPUT);
+pinMode(pump2Pin, OUTOUT); //second pump set at output for specific considiton
 
-    //Initializes LED function
-    //The LED will now know when to turn on and off when called during loop
-    //when the threshold has been met, or conductivity is lower than the threshold = on
-    //when threshold has been exceeded, or conductivity is at its peak = off
-    pinMode(LEDPin, OUTPUT);
+SerialUSB.begin(9600); //serial monitor prints values @ 9600 baud rate
+
+SerialUSB.println("Initiate Conductivity"); //serial monitor prints the phrase "Initiate Conductivity" to determine valid function of SM
 }
