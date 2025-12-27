@@ -4,7 +4,7 @@ Note: Distilled water has conductivity greater than 0, but less than 1023
 Note: Tap water has exactly 1023 conductivity, or fluctuates 2-3 units below the standard
 Note: Serial monitor to be used for monitoring conductivity flow and accuracy.
 
-# In the case that anyone would like to replicate, execute and commit to this project, follow the procedure presented below, and feel free to tweak anything along the way!
+#### In the case that anyone would like to replicate, execute and commit to this project, follow the procedure presented below, and feel free to tweak anything along the way!
 
 Code/Main Algorithm
 Using a Windows 11 Dell laptop, download or start up the application Arduino IDE
