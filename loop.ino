@@ -1,4 +1,5 @@
 //prototype will respond to this loop based system and base each variable function to each condition.
+
 void loop() {
 
     conductivity = analogRead(A0); //values from ~A0
